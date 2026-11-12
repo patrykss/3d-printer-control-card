@@ -1,7 +1,6 @@
 
 {
   "name": "3D Printer Control Card",
-  "filename": "dist/printer-control-card.js",
-  "render_readme": true,
+  "filename": "printer-control-card.js",
   "homeassistant": "2025.1.0"
 }
