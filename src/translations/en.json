@@ -1,0 +1,71 @@
+
+{
+  "card": {
+    "status": {
+      "online": "Online",
+      "offline": "Offline",
+      "printing": "Printing",
+      "paused": "Paused",
+      "idle": "Ready",
+      "unknown": "Unknown status"
+    },
+    "job": {
+      "current_file": "Current file",
+      "no_file": "No active print",
+      "progress": "Print progress",
+      "started": "Started",
+      "estimated_end": "Estimated finish",
+      "remaining": "Time remaining",
+      "completion": "Completed"
+    },
+    "controls": {
+      "pause": "Pause",
+      "resume": "Resume",
+      "cancel": "Cancel",
+      "emergency_stop": "Emergency stop"
+    },
+    "sections": {
+      "quick_actions": "Quick actions",
+      "statistics": "Statistics",
+      "temperatures": "Temperatures",
+      "cameras": "Cameras"
+    },
+    "offline": {
+      "title": "Printer is sleeping",
+      "subtitle": "Resting before the next print.",
+      "description": "No connection to the printer."
+    },
+    "messages": {
+      "no_statistics": "No statistics configured.",
+      "no_cameras": "No cameras configured.",
+      "camera_unavailable": "Camera image is unavailable.",
+      "action_error": "Action could not be executed.",
+      "loading": "Loading..."
+    },
+    "editor": {
+      "title": "Printer configuration",
+      "general": "General settings",
+      "printer_name": "Printer name",
+      "connection_entity": "Printer availability entity",
+      "automatic_detection": "Automatic detection",
+      "detect_button": "Detect entities",
+      "job_settings": "Print information",
+      "controls": "Printer controls",
+      "quick_actions": "Custom buttons",
+      "statistics": "Statistics configuration",
+      "cameras": "Camera configuration",
+      "appearance": "Appearance",
+      "add": "Add",
+      "remove": "Remove",
+      "entity": "Entity",
+      "label": "Name",
+      "service": "Service",
+      "url": "URL",
+      "icon": "Icon",
+      "unit": "Unit",
+      "columns": "Number of columns",
+      "detected": "Matching entities found.",
+      "not_detected": "No matching entities found."
+    }
+  }
+}

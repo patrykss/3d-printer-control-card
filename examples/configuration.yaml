@@ -1,0 +1,134 @@
+
+type: custom:printer-control-card
+
+name: Voron 2.4
+printer_hint: voron
+
+connection_entity: binary_sensor.voron_moonraker_connected
+
+offline_states:
+  - "off"
+  - "unavailable"
+  - "unknown"
+  - "disconnected"
+
+offline_message: ""
+offline_subtitle: ""
+
+entities:
+  status: sensor.voron_print_state
+  filename: sensor.voron_current_print
+  progress: sensor.voron_print_progress
+  started_at: sensor.voron_print_start_time
+  estimated_end: sensor.voron_print_end_time
+  remaining_time: sensor.voron_print_time_remaining
+  thumbnail: image.voron_thumbnail
+
+controls:
+  pause:
+    entity: button.voron_pause_print
+
+  resume:
+    entity: button.voron_resume_print
+
+  cancel:
+    entity: button.voron_cancel_print
+    confirmation: true
+    confirmation_text: "Czy anulować wydruk?"
+
+  emergency_stop:
+    entity: button.voron_emergency_stop
+    confirmation: true
+    confirmation_text: "ZATRZYMANIE AWARYJNE! Kontynuować?"
+
+quick_actions:
+  - label: Bed mesh
+    icon: mdi:grid
+    entity: button.voron_bed_mesh
+
+  - label: Home all
+    icon: mdi:home
+    entity: button.voron_home_all
+
+  - label: Center nozzle
+    icon: mdi:crosshairs-gps
+    entity: button.voron_center_nozzle
+
+  - label: Fluidd
+    icon: mdi:open-in-new
+    url: http://fluidd.local
+
+  - label: Mainsail
+    icon: mdi:open-in-new
+    url: http://mainsail.local
+
+  - label: Park head
+    icon: mdi:arrow-down-bold
+    service: button.press
+    target:
+      entity_id: button.voron_park_head
+
+statistics:
+  - label: Nozzle
+    entity: sensor.voron_extruder_temperature
+    unit: "°C"
+    icon: mdi:thermometer
+
+  - label: Bed
+    entity: sensor.voron_bed_temperature
+    unit: "°C"
+    icon: mdi:radiator
+
+  - label: Chamber
+    entity: sensor.voron_chamber_temperature
+    unit: "°C"
+    icon: mdi:home-thermometer
+
+  - label: MCU
+    entity: sensor.voron_mcu_temperature
+    unit: "°C"
+    icon: mdi:chip
+
+  - label: Dryer
+    entity: sensor.filament_dryer_temperature
+    unit: "°C"
+    icon: mdi:heat-wave
+    size: large
+
+cameras:
+  - label: Printer camera
+    entity: camera.voron_printer
+    refresh_interval: 5
+
+  - label: Enclosure camera
+    entity: camera.voron_enclosure
+    refresh_interval: 10
+
+sections:
+  quick_actions:
+    title: ""
+    enabled: true
+    collapsible: false
+
+  statistics:
+    title: ""
+    enabled: true
+    collapsible: true
+    collapsed: false
+    columns: 3
+
+  cameras:
+    title: ""
+    enabled: true
+    collapsible: true
+    collapsed: false
+    columns: 2
+
+appearance:
+  compact_mode: false
+  show_status: true
+  show_progress: true
+  show_times: true
+  show_thumbnails: true
+  camera_aspect_ratio: "16 / 9"
+  animation: true

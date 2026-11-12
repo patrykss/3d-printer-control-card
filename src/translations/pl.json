@@ -1,0 +1,71 @@
+
+{
+  "card": {
+    "status": {
+      "online": "Online",
+      "offline": "Offline",
+      "printing": "Drukowanie",
+      "paused": "Wstrzymano",
+      "idle": "Gotowa",
+      "unknown": "Nieznany status"
+    },
+    "job": {
+      "current_file": "Aktualny plik",
+      "no_file": "Brak aktywnego wydruku",
+      "progress": "Postęp wydruku",
+      "started": "Rozpoczęcie",
+      "estimated_end": "Przewidywane zakończenie",
+      "remaining": "Pozostały czas",
+      "completion": "Ukończono"
+    },
+    "controls": {
+      "pause": "Pauza",
+      "resume": "Wznów",
+      "cancel": "Anuluj",
+      "emergency_stop": "STOP AWARYJNY"
+    },
+    "sections": {
+      "quick_actions": "Szybkie akcje",
+      "statistics": "Statystyki",
+      "temperatures": "Temperatury",
+      "cameras": "Kamery"
+    },
+    "offline": {
+      "title": "Drukarka śpi",
+      "subtitle": "Odpoczynek przed kolejnym wydrukiem.",
+      "description": "Brak połączenia z drukarką."
+    },
+    "messages": {
+      "no_statistics": "Nie skonfigurowano statystyk.",
+      "no_cameras": "Nie skonfigurowano kamer.",
+      "camera_unavailable": "Obraz z kamery jest niedostępny.",
+      "action_error": "Nie udało się wykonać akcji.",
+      "loading": "Ładowanie..."
+    },
+    "editor": {
+      "title": "Konfiguracja drukarki",
+      "general": "Ustawienia podstawowe",
+      "printer_name": "Nazwa drukarki",
+      "connection_entity": "Encja dostępności drukarki",
+      "automatic_detection": "Automatyczne wykrywanie",
+      "detect_button": "Wykryj encje",
+      "job_settings": "Informacje o wydruku",
+      "controls": "Przyciski sterowania",
+      "quick_actions": "Własne przyciski",
+      "statistics": "Konfiguracja statystyk",
+      "cameras": "Konfiguracja kamer",
+      "appearance": "Wygląd",
+      "add": "Dodaj",
+      "remove": "Usuń",
+      "entity": "Encja",
+      "label": "Nazwa",
+      "service": "Usługa",
+      "url": "Adres URL",
+      "icon": "Ikona",
+      "unit": "Jednostka",
+      "columns": "Liczba kolumn",
+      "detected": "Znaleziono pasujące encje.",
+      "not_detected": "Nie znaleziono pasujących encji."
+    }
+  }
+}
