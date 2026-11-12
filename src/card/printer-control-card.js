@@ -36,7 +36,7 @@ export class PrinterControlCard extends LitElement {
   _config: { state: true },
   _actionError: { state: true },
   _refreshCounter: { state: true },
-  _collapsed: { state: true },
+  __sectionOpen: { state: true },
   _cameraError: { state: true }
 };
 
@@ -49,7 +49,7 @@ export class PrinterControlCard extends LitElement {
     this._config = undefined;
     this._actionError = "";
     this._refreshCounter = 0;
-    this._collapsed = {};
+    this._sectionOpen  = {};
     this._cameraTimer = undefined;
     this._cameraError = {};
   }
@@ -91,7 +91,7 @@ export class PrinterControlCard extends LitElement {
     this._config = normalizeConfig(config);
 
     this._actionError = "";
-    this._collapsed = {};
+    this._sectionOpen = {};
 
     this._resetCameraTimer();
   }
@@ -546,11 +546,11 @@ export class PrinterControlCard extends LitElement {
   }
 
   _handleSectionToggle(key, event) {
-    this._collapsed = {
-      ...this._collapsed,
-      [key]: !event.currentTarget.open
-    };
-  }
+  this._sectionOpen = {
+    ...this._sectionOpen,
+    [key]: event.currentTarget.open
+  };
+}
 
   _renderSection(key, section, content, icon) {
     if (!section?.enabled) {
@@ -563,8 +563,8 @@ export class PrinterControlCard extends LitElement {
 
     if (section.collapsible) {
       const open =
-        this._collapsed[key] ??
-        !section.collapsed;
+  this._sectionOpen[key] ??
+  !section.collapsed;
 
       return html`
         <details

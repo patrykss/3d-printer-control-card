@@ -2891,7 +2891,7 @@ var PrinterControlCard = class extends i4 {
     _config: { state: true },
     _actionError: { state: true },
     _refreshCounter: { state: true },
-    _collapsed: { state: true },
+    __sectionOpen: { state: true },
     _cameraError: { state: true }
   };
   static styles = [cardStyles];
@@ -2901,7 +2901,7 @@ var PrinterControlCard = class extends i4 {
     this._config = void 0;
     this._actionError = "";
     this._refreshCounter = 0;
-    this._collapsed = {};
+    this._sectionOpen = {};
     this._cameraTimer = void 0;
     this._cameraError = {};
   }
@@ -2937,7 +2937,7 @@ var PrinterControlCard = class extends i4 {
     }
     this._config = normalizeConfig(config);
     this._actionError = "";
-    this._collapsed = {};
+    this._sectionOpen = {};
     this._resetCameraTimer();
   }
   getCardSize() {
@@ -3285,9 +3285,9 @@ var PrinterControlCard = class extends i4 {
     `;
   }
   _handleSectionToggle(key, event) {
-    this._collapsed = {
-      ...this._collapsed,
-      [key]: !event.currentTarget.open
+    this._sectionOpen = {
+      ...this._sectionOpen,
+      [key]: event.currentTarget.open
     };
   }
   _renderSection(key, section, content, icon) {
@@ -3296,7 +3296,7 @@ var PrinterControlCard = class extends i4 {
     }
     const title = section.title || this._t(`card.sections.${key}`);
     if (section.collapsible) {
-      const open = this._collapsed[key] ?? !section.collapsed;
+      const open = this._sectionOpen[key] ?? !section.collapsed;
       return b2`
         <details
           class="section"
